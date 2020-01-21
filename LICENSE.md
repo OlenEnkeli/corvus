@@ -1,4 +1,4 @@
-Copyright © 2018, [Anton Niksolkiy](mailto:angeloffree@yandex.ru).
+Copyright © 2020, [Anton Niksolkiy](mailto:angeloffree@yandex.ru).
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

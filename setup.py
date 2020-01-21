@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='corvus',
-    version='0.0.1',
+    version='0.0.2',
     url='https://github.com/OlenEnkeli/corvus',
     packages=find_packages(),
     license='BSD',
@@ -11,14 +11,12 @@ setup(
     author_email='angeloffree@yandex.ru',
     description='Python WebSocket framework with JSON-RPC implementation',
     data_files=[('', ['LICENSE.md'])],
-    extras_require={
-        'full': [
-            'uvicorn',
-            'uvloop',
-            'marshmallow',
-            'websockets'
-        ]
-    },
+    install_requires=[
+        'uvicorn',
+        'uvloop',
+        'marshmallow',
+        'websockets'
+    ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Environment :: Web Environment',
@@ -30,5 +28,5 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
     ],
-    zip_safe=False
+    zip_safe=True
 )
