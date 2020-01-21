@@ -1,5 +1,7 @@
 __pycache__
 *.pyc
+dist
+corvus.egg-info
 env
 venv
 .vscode
