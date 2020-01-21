@@ -1,0 +1,7 @@
+Click==7.0
+h11==0.8.1
+httptools==0.0.13
+uvicorn==0.10.8
+uvloop==0.14.0
+marshmallow==3.3.0
+websockets==8.1
