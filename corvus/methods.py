@@ -1,4 +1,4 @@
-from corvus.errors import ValidationError, ParseError
+from .errors import ValidationError, ParseError
 
 
 def load_schema(self, schema):
