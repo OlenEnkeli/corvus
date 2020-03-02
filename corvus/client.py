@@ -1,4 +1,5 @@
 from .utils import proccess_headers
+from .jsonrpc import jrpc_response
 
 
 class Client:
@@ -19,7 +20,7 @@ class Client:
 
     async def send(self, data):
 
-        await self.send({
+        await self._send({
             'type': 'websocket.send',
-            'bytes': data
+            'bytes': jrpc_response(data)
         })
