@@ -3,7 +3,7 @@ from marshmallow import ValidationError
 from .errors import ParseError
 
 
-def load_schema(self, schema):
+def load_schema(schema):
     def decorator(method):
         async def wrapped(req, client):
 
