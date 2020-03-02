@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='corvus',
-    version='0.0.3',
+    version='0.0.4',
     url='https://github.com/OlenEnkeli/corvus',
     packages=find_packages(),
     license='BSD',
