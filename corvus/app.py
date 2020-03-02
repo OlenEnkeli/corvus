@@ -51,7 +51,7 @@ class App:
     def add_hook(self, hook_name, hook_func):
 
         if hook_name not in self.hooks.keys():
-            logging.error(f'Unknown hook {hook_type}')
+            logging.error(f'Unknown hook {hook_name}')
             return
 
         self.hooks[hook_name] = hook_func
@@ -96,26 +96,13 @@ class App:
 
         return wrapped
 
-    def add_user(client, user):
+    def add_user(self, client, user):
 
         client.user = user
         self.users[user.id] = client
 
-    def remove_user(client):
+    def remove_user(self, client):
         self.users.pop(client.user.id)
-
-    def load_schema(self, schema):
-        def decorator(method):
-            async def wrapped(req, client):
-
-                try:
-                    req.data = schema().load(req.data)
-                except ValidationError:
-                    raise ParseError
-
-                return await method(req, client)
-            return wrapped
-        return decorator
 
     def before(self, func):
         def decorator(method):
