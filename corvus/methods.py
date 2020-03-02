@@ -1,4 +1,6 @@
-from .errors import ValidationError, ParseError
+from marshmallow import ValidationError
+
+from .errors import ParseError
 
 
 def load_schema(self, schema):
