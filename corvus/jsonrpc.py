@@ -34,7 +34,7 @@ def jrpc_error(code=-32000, message='Server error', request_id=None):
     })
 
 
-def jrpc_response(result=None, request_id=None):
+def jrpc_response(result={}, request_id=0):
 
     return jrpc_send({
         'jsonrpc': '2.0',

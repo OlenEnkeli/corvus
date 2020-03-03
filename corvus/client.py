@@ -19,8 +19,4 @@ class Client:
         return self.__repr__()
 
     async def send(self, data):
-
-        await self._send({
-            'type': 'websocket.send',
-            'bytes': jrpc_response(data)
-        })
+        await self._send(jrpc_response(data))
