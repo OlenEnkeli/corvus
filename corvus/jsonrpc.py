@@ -43,6 +43,16 @@ def jrpc_response(result={}, request_id=0):
     })
 
 
+def jrpc_request(method='', params={}):
+
+    return jrpc_send({
+        'jsonrpc': '2.0',
+        'id': 0,
+        'method': method,
+        'params': params
+    })
+
+
 def validate_jrpc_request(data):
 
     for key in JRPS_REQUEST_FIELDS:

@@ -1,5 +1,5 @@
 from .utils import proccess_headers
-from .jsonrpc import jrpc_response
+from .jsonrpc import jrpc_response, jrpc_request
 
 
 class Client:
@@ -20,3 +20,6 @@ class Client:
 
     async def send(self, data):
         await self._send(jrpc_response(data))
+
+    async def send_request(self, method, params):
+        await self._send(jrpc_request(method, params))
