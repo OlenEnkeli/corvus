@@ -46,7 +46,7 @@ class App:
         if not self.hooks[hook_name]:
             return
 
-        self.hooks[hook_name](app=self, *args)
+        self.hooks[hook_name](*args)
 
     def add_hook(self, hook_name, hook_func):
 
