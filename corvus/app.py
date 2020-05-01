@@ -110,6 +110,7 @@ class App:
 
                 req, client = func(req, client)
                 return await method(req, client)
+
             return wrapped
         return decorator
 
@@ -119,18 +120,9 @@ class App:
 
                 resp = await method(req, client)
                 return func(req, resp, client)
+
             return wrapped
         return decorator
-
-    def user_required(self, method):
-
-        async def wrapped(req, client):
-
-            if not client.user:
-                raise Unauthorized
-            return await method(req, client)
-
-        return wrapped
 
     async def __call__(self, scope, receive, send):
 

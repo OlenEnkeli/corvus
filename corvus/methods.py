@@ -1,6 +1,6 @@
 from marshmallow import ValidationError
 
-from .errors import ParseError
+from .errors import ParseError, Unauthorized
 
 
 def load_schema(schema):
@@ -15,3 +15,14 @@ def load_schema(schema):
             return await method(req, client)
         return wrapped
     return decorator
+
+
+def user_required(method):
+
+    async def wrapped(req, client):
+
+        if not client.user:
+            raise Unauthorized
+        return await method(req, client)
+
+    return wrapped
